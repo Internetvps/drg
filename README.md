@@ -42,7 +42,7 @@ Follow these steps to install and use the WebSocket Service Manager:
 
 2. **Run the Installation Script:**
 
-   Execute the installation script with root privileges. This script will install necessary packages, download the WebSocket proxy script (drg_websocket.py), create systemd 
+   Execute the installation script with root privileges. This script will install necessary packages, download the WebSocket proxy script (agn_websocket.py), create systemd 
    service files, and set up the command-line utility.
    
    ```bash
@@ -61,22 +61,11 @@ Follow the menu options displayed on-screen to manage your WebSocket service eff
 
 ### Support and Maintenance
 
-This project is maintained by Khaled AGN. For updates and support, visit:
+This project is maintained by drgvpn. For updates and support, visit:
 
 <ul>
  <li>TELEGRAM CHANNEL: https://t.me/drg_vpn</li>
- <li>
- 
- </ul>
-
-
-
-
-
-
-
-
-
+ <li
 
 
 

@@ -2,13 +2,13 @@
 
 # Constants
 PYTHON_SCRIPT_URL="https://github.com/internetvps/drg/raw/main/drg_websocket.py"
-DRG_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg/raw/main/drg_manager.sh"
+drg_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg/raw/main/drgws_manager.sh"
 INSTALL_DIR="/opt/drg_websocket"
-SYSTEMD_SERVICE_FILE="/etc/systemd/system/drg_websocket.service"
+SYSTEMD_SERVICE_FILE="/etc/systemd/system/drg-websocket.service"
 PYTHON_BIN=$(command -v python3)  # Ensure python3 is available
-DRG_MANAGER_SCRIPT="drg_manager.sh"
-DRG_MANAGER_PATH="$INSTALL_DIR/$DRG_MANAGER_SCRIPT"
-DRG_MANAGER_LINK="/usr/local/bin/websocket"
+drg_MANAGER_SCRIPT="drgws_manager.sh"
+drg_MANAGER_PATH="$INSTALL_DIR/$drg_MANAGER_SCRIPT"
+drg_MANAGER_LINK="/usr/local/bin/websocket"
 
 # Function to install required packages
 install_required_packages() {
@@ -25,13 +25,13 @@ download_drg_websocket() {
     wget -O "$INSTALL_DIR/drg_websocket.py" "$PYTHON_SCRIPT_URL"
 }
 
-# Function to download drg_manager.sh script using wget
-download_drg_manager() {
-    echo "Downloading $DRG_MANAGER_SCRIPT from $DRG_MANAGER_SCRIPT_URL..."
-    wget -O "$DRG_MANAGER_PATH" "$DRG_MANAGER_SCRIPT_URL"
-    chmod +x "$DRG_MANAGER_PATH"
-    ln -sf "$DRG_MANAGER_PATH" "$DRG_MANAGER_LINK"
-    convert_to_unix_line_endings "$DRG_MANAGER_PATH"
+# Function to download drgws_manager.sh script using wget
+download_drgws_manager() {
+    echo "Downloading $drg_MANAGER_SCRIPT from $drg_MANAGER_SCRIPT_URL..."
+    wget -O "$drg_MANAGER_PATH" "$drg_MANAGER_SCRIPT_URL"
+    chmod +x "$drg_MANAGER_PATH"
+    ln -sf "$drg_MANAGER_PATH" "$drg_MANAGER_LINK"
+    convert_to_unix_line_endings "$drg_MANAGER_PATH"
 }
 
 # Function to convert script to Unix line endings
@@ -43,9 +43,9 @@ convert_to_unix_line_endings() {
 
 # Function to start systemd service
 start_systemd_service() {
-    echo "Starting drg_websocket service..."
-    systemctl start drg_websocket
-    systemctl status drg_websocket --no-pager  # Optionally, show status after starting
+    echo "Starting drg-websocket service..."
+    systemctl start drg-websocket
+    systemctl status drg-websocket --no-pager  # Optionally, show status after starting
 }
 
 # Function to install systemd service
@@ -67,8 +67,8 @@ WantedBy=multi-user.target
 EOF
     echo "Reloading systemd daemon..."
     systemctl daemon-reload
-    echo "Enabling drg_websocket service..."
-    systemctl enable drg_websocket
+    echo "Enabling drg-websocket service..."
+    systemctl enable drg-websocket
 }
 
 # Function to display banner
@@ -76,8 +76,8 @@ display_banner() {
     cat << "EOF"
 **********************************************
 *                                            *
-*                 DRG VPN                 *
-*      Visit me on Telegram: @DRG_VPN      *
+*                websocket menu drgvpn                  *
+*      Visit me on Telegram: @drg_vpn      *
 *                                            *
 **********************************************
 EOF
@@ -88,8 +88,8 @@ EOF
 display_installation_summary() {
     echo "Installation completed successfully!"
     echo
-    echo "Installed DRG_websocket.py in: $INSTALL_DIR"
-    echo "Installed $DRG_MANAGER_SCRIPT in: $DRG_MANAGER_PATH"
+    echo "Installed drg_websocket.py in: $INSTALL_DIR"
+    echo "Installed $drg_MANAGER_SCRIPT in: $drg_MANAGER_PATH"
     echo "You can now manage the WebSocket service using 'websocket menu' command."
 }
 
@@ -113,8 +113,8 @@ main() {
     # Download Python proxy script
     download_drg_websocket
 
-    # Download DRG_manager.sh script
-    download_drg_manager
+    # Download drgws_manager.sh script
+    download_drgws_manager
 
     # Install systemd service
     install_systemd_service
