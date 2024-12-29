@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Constants
-DRG_WEBSOCKET_SERVICE="drg-websocket"
+DRG_WEBSOCKET_SERVICE="drg_websocket"
 PYTHON_SCRIPT_PATH="/opt/drg_websocket/drg_websocket.py"
 
 # Function to display banner
