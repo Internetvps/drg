@@ -37,16 +37,16 @@ Follow these steps to install and use the WebSocket Service Manager:
    Use `wget` to download the installation script and `chmod` to make it executable:
 
    ```bash
-   wget https://raw.githubusercontent.com/internetvps/drg/main/install.sh
-   chmod +x install.sh
+   wget https://raw.githubusercontent.com/internetvps/drg/main/installl.sh
+   chmod +x installl.sh
 
 2. **Run the Installation Script:**
 
-   Execute the installation script with root privileges. This script will install necessary packages, download the WebSocket proxy script (agn_websocket.py), create systemd 
+   Execute the installation script with root privileges. This script will install necessary packages, download the WebSocket proxy script (drg_websocket.py), create systemd 
    service files, and set up the command-line utility.
    
    ```bash
-   sudo ./install.sh
+   sudo ./installl.sh
 
 ### Usage
 After installation, run the WebSocket Service Manager using:
