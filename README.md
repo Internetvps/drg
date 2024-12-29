@@ -37,7 +37,7 @@ Follow these steps to install and use the WebSocket Service Manager:
    Use `wget` to download the installation script and `chmod` to make it executable:
 
    ```bash
-   wget https://raw.githubusercontent.com/internetvps/drg_Websocket/main/install.sh
+   wget https://raw.githubusercontent.com/internetvps/drg_Websocket/drg/install.sh
    chmod +x install.sh
 
 2. **Run the Installation Script:**
