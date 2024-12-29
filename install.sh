@@ -4,7 +4,7 @@
 PYTHON_SCRIPT_URL="https://github.com/internetvps/drg-websocket/raw/main/DRG_websocket.py"
 DRG_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg-Websocket/raw/main/drg_manager.sh"
 INSTALL_DIR="/opt/drg_websocket"
-SYSTEMD_SERVICE_FILE="/etc/systemd/system/DRG-websocket.service"
+SYSTEMD_SERVICE_FILE="/etc/systemd/system/drg_websocket.service"
 PYTHON_BIN=$(command -v python3)  # Ensure python3 is available
 DRG_MANAGER_SCRIPT="drg_manager.sh"
 DRG_MANAGER_PATH="$INSTALL_DIR/$DRG_MANAGER_SCRIPT"
@@ -43,9 +43,9 @@ convert_to_unix_line_endings() {
 
 # Function to start systemd service
 start_systemd_service() {
-    echo "Starting DRG-websocket service..."
-    systemctl start DRG-websocket
-    systemctl status DRG-websocket --no-pager  # Optionally, show status after starting
+    echo "Starting drg_websocket service..."
+    systemctl start drg_websocket
+    systemctl status drg_websocket --no-pager  # Optionally, show status after starting
 }
 
 # Function to install systemd service
@@ -57,7 +57,7 @@ Description=Python Proxy Service
 After=network.target
 
 [Service]
-ExecStart=$PYTHON_BIN $INSTALL_DIR/DRG_websocket.py 8098
+ExecStart=$PYTHON_BIN $INSTALL_DIR/drg_websocket.py 8098
 Restart=always
 User=root
 Group=root
@@ -67,8 +67,8 @@ WantedBy=multi-user.target
 EOF
     echo "Reloading systemd daemon..."
     systemctl daemon-reload
-    echo "Enabling DRG-websocket service..."
-    systemctl enable DRG-websocket
+    echo "Enabling drg_websocket service..."
+    systemctl enable drg_websocket
 }
 
 # Function to display banner
@@ -77,7 +77,7 @@ display_banner() {
 **********************************************
 *                                            *
 *                 DRG VPN                 *
-*      Visit me on Telegram: @kDRG_VPN      *
+*      Visit me on Telegram: @DRG_VPN      *
 *                                            *
 **********************************************
 EOF
