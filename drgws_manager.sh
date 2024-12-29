@@ -8,10 +8,10 @@ PYTHON_SCRIPT_PATH="/opt/drg_websocket/drg_websocket.py"
 display_banner() {
    cat << "EOF"
 *************************************************
-*                                               *
-*                  w3bsogket drgvpn                   *
-*        Visit me on Telegram: @drg_vpn       *
-*                                               *
+*                                                *
+  *                  w3bsocket drgvpn           *
+  *        Visit me on Telegram: @drg_vpn       *
+*                                                *
 *************************************************
 EOF
 }
