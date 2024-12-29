@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Constants
-PYTHON_SCRIPT_URL="https://github.com/internetvps/drg_websocket/raw/main/drg_websocket.py"
-DRG_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg_Websocket/raw/main/drg_manager.sh"
+PYTHON_SCRIPT_URL="https://github.com/internetvps/drg/raw/main/drg_websocket.py"
+DRG_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg/raw/main/drg_manager.sh"
 INSTALL_DIR="/opt/drg_websocket"
 SYSTEMD_SERVICE_FILE="/etc/systemd/system/drg_websocket.service"
 PYTHON_BIN=$(command -v python3)  # Ensure python3 is available
@@ -26,7 +26,7 @@ download_drg_websocket() {
 }
 
 # Function to download drg_manager.sh script using wget
-download_DRGws_manager() {
+download_drg_manager() {
     echo "Downloading $DRG_MANAGER_SCRIPT from $DRG_MANAGER_SCRIPT_URL..."
     wget -O "$DRG_MANAGER_PATH" "$DRG_MANAGER_SCRIPT_URL"
     chmod +x "$DRG_MANAGER_PATH"
@@ -111,10 +111,10 @@ main() {
     mkdir -p "$INSTALL_DIR"
 
     # Download Python proxy script
-    download_DRG_websocket
+    download_drg_websocket
 
     # Download DRG_manager.sh script
-    download_DRG_manager
+    download_drg_manager
 
     # Install systemd service
     install_systemd_service
