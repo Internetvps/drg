@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Constants
-PYTHON_SCRIPT_URL="https://github.com/internetvps/drg-websocket/raw/main/DRG_websocket.py"
-DRG_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg-Websocket/raw/main/drg_manager.sh"
+PYTHON_SCRIPT_URL="https://github.com/internetvps/drg_websocket/raw/main/drg_websocket.py"
+DRG_MANAGER_SCRIPT_URL="https://github.com/internetvps/drg_Websocket/raw/main/drg_manager.sh"
 INSTALL_DIR="/opt/drg_websocket"
 SYSTEMD_SERVICE_FILE="/etc/systemd/system/drg_websocket.service"
 PYTHON_BIN=$(command -v python3)  # Ensure python3 is available
