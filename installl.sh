@@ -90,7 +90,7 @@ display_installation_summary() {
     echo
     echo "Installed drg_websocket.py in: $INSTALL_DIR"
     echo "Installed $drg_MANAGER_SCRIPT in: $drg_MANAGER_PATH"
-    echo "You can now manage the WebSocket service using 'websocket menu' command."
+    echo "You can now manage the WebSocket service using 'websocket' command."
 }
 
 # Main function
